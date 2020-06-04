@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks.Dataflow;
 
 namespace ComputationalThinkingExercises
 {
@@ -83,6 +84,25 @@ namespace ComputationalThinkingExercises
             Console.WriteLine("ARE THESE INTEGERS EQUAL?\n");
 
             // Enter your solution here
+            Console.WriteLine("Enter your first number.");
+            string numberOne = Console.ReadLine();
+
+            //Ask for second integer.
+            Console.WriteLine("What is your second number");
+            string numberTwo = Console.ReadLine();
+
+            //Compare the two integers
+            if (numberOne == numberTwo)
+            {
+                Console.WriteLine("Your numbers are equal");
+            }
+            else
+            {
+                Console.WriteLine("Your numbers are not equal");
+            }
+            
+            // If they are equal, print "they are equal"
+            // Else, print "they are not equal"
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -96,9 +116,26 @@ namespace ComputationalThinkingExercises
             Console.Clear();
             Console.WriteLine("EVEN OR ODD?\n");
 
-            // Enter your solution here
+            //Ask for integer
+            Console.WriteLine("Please enter a number");
+            string number = Console.ReadLine();
+            int even = Convert.ToInt32(number);
 
-            Console.Write("Press enter to return to the Main Menu");
+            //Is the number even
+           
+            if (even % 2 ==0)
+            {
+                Console.WriteLine("The number is even");
+            }
+            else
+            {
+                Console.WriteLine("The number is odd");
+            }
+
+            Console.ReadLine().ToLower(); 
+           
+        
+            Console.WriteLine("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
 
@@ -110,7 +147,20 @@ namespace ComputationalThinkingExercises
             Console.Clear();
             Console.WriteLine("VOWEL OR CONSONANT?\n");
 
-            // Enter your solution here
+            //Emter your solution here
+            Console.WriteLine("Please enter a letter");
+            string letter = Console.ReadLine();
+            string vowel = "a e i o u";
+            bool aVowel = vowel.Contains(letter);
+
+        if (aVowel)
+            {
+                Console.WriteLine("The letter is a vowel");
+            }
+        else 
+            {
+                Console.WriteLine("It's a consonant");
+            }
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -125,6 +175,25 @@ namespace ComputationalThinkingExercises
             Console.WriteLine("FIND THE LARGEST NUMBER\n");
 
             // Enter your solution here
+            Console.WriteLine("Enter your first number for comparison.");
+            string integerOne = Console.ReadLine();
+            int firstNumber = Convert.ToInt32(integerOne);
+
+            //User puts in second integer
+            Console.WriteLine("what is your second number?");
+            string integerTwo = Console.ReadLine();
+            int secondNumber = Convert.ToInt32(integerTwo);
+
+            //Compare the two integers
+            if (firstNumber > secondNumber)
+            {
+                Console.WriteLine(firstNumber + " is larger");
+            }
+            else 
+            {
+                Console.WriteLine(secondNumber + " is larger");
+            }
+            
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -133,11 +202,28 @@ namespace ComputationalThinkingExercises
         static void DivisibleBy3()
         {
             // Ask the user for a number and then tell them if it is divisible by 3
-
-            Console.Clear();
-            Console.WriteLine("DIVISIBLE BY 3\n");
+            
 
             // Enter your solution here
+            Console.WriteLine("Enter a number, you hope to be divisible by 3");
+            string integer = Console.ReadLine();
+            int number = Convert.ToInt32(integer);
+
+            //Is the number divisible by three?
+            if (number % 2 == 0)
+            {
+                Console.WriteLine("Your number doesn't work");
+            }
+            else if ( number % 1 == 0)
+            {
+                Console.WriteLine("Sorry, doesn't work");
+            }
+            else
+            {
+                Console.WriteLine("Your number can be divided by 3");
+            }
+            Console.Clear();
+            Console.WriteLine("DIVISIBLE BY 3\n");
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -147,6 +233,18 @@ namespace ComputationalThinkingExercises
         {
             // At a restaurant, Mike and his three friends decided to divide the bill evenly.
             // If each person paid $13 then what was the total bill?
+
+                   
+            Console.WriteLine("How many people in your party?");
+            string people = Console.ReadLine();
+            int peopleTotal = Convert.ToInt32(people);
+
+            Console.WriteLine("Each person contributes?");
+            string everyonePays = Console.ReadLine();
+            int personInput = Convert.ToInt32(everyonePays);
+
+            Console.WriteLine("The total bill is" + (peopleTotal * personInput));
+                                
 
             // Returning to the above problem, replace hard-coded values of 4(number of diners)
             // and 13(cost per diner) with values provided by the user.
